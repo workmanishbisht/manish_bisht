@@ -22,7 +22,7 @@
   --radius-lg: 24px;
   --font-main: "Inter", sans-serif;
   --font-heading: "Montserrat", sans-serif;
-  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.15s ease-in-out;
 }
 
 [data-theme="dark"] {
@@ -56,21 +56,24 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-main);
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   transition:
-    background var(--transition),
-    color var(--transition);
+    background-color 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: background-color, color;
 }
 
 img {
   display: block;
   max-width: 100%;
+  cursor: pointer;
 }
 
 a {
@@ -83,7 +86,7 @@ button {
 }
 
 #main-container {
-  max-width: 1380px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -180,6 +183,7 @@ button {
   font-size: 12px;
   background: var(--card);
   transition: border-color var(--transition);
+  cursor: pointer;
 }
 
 .email-pill:hover {
@@ -228,7 +232,7 @@ button {
   background: var(--text);
   color: var(--bg);
   border-radius: 999px;
-  padding: 10px 20px;
+  padding: 10.4px 20px;
   border: none;
   cursor: pointer;
   font-size: 11px;
@@ -241,13 +245,11 @@ button {
   font-weight: 700;
   transition:
     background var(--transition),
-    transform 0.2s,
     box-shadow 0.2s;
 }
 
 .talk-btn:hover {
   background: var(--accent);
-  transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
 }
 
@@ -428,6 +430,10 @@ button {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-light);
+}
+
+.resume-outline i{
+  font-size: 15px;
 }
 
 /* Hero right */
@@ -624,9 +630,9 @@ button {
   background-color: #1a1a1a;
   background-image: url("../Assets/skills/javascript.png");
 }
-.skill-icon.bootstrap {
+.skill-icon.tailwind {
   background-color: #1a1a1a;
-  background-image: url("../Assets/skills/bootstrap.png");
+  background-image: url("../Assets/skills/tailwind.png");
 }
 .skill-icon.photoshop {
   background-color: #1a1a1a;
@@ -1354,10 +1360,8 @@ button {
   transform: scale(0);
 }
 
-/* ===========================
-   WORK CAROUSEL
-   =========================== */
 
+/* ===== Edication Section ===== */
 .latest-work {
   padding: 100px 0;
   overflow: hidden;
@@ -1430,9 +1434,7 @@ button {
   color: var(--text);
   position: relative;
   overflow: hidden;
-  transition:
-    color 0.3s,
-    border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
 }
 
 .carousel-btn::before {
@@ -1449,10 +1451,12 @@ button {
 .carousel-btn:hover::before {
   transform: scale(1);
 }
+
 .carousel-btn:hover {
   color: #fff;
   border-color: var(--accent);
 }
+
 .carousel-btn i {
   position: relative;
   z-index: 1;
@@ -1469,10 +1473,7 @@ button {
   height: 7px;
   border-radius: 50%;
   background: var(--border);
-  transition:
-    background 0.3s,
-    width 0.3s,
-    border-radius 0.3s;
+  transition: background 0.3s, width 0.3s, border-radius 0.3s;
   cursor: pointer;
 }
 
@@ -1489,16 +1490,15 @@ button {
 
 .work-grid {
   display: flex;
-  width: 200%;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-slide {
-  width: 50%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .work-card {
@@ -1523,9 +1523,7 @@ button {
   z-index: 4;
   opacity: 0;
   transform: translate(-6px, -6px);
-  transition:
-    opacity 0.35s,
-    transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
 }
 
 .work-card::after {
@@ -1541,9 +1539,7 @@ button {
   z-index: 4;
   opacity: 0;
   transform: translate(6px, 6px);
-  transition:
-    opacity 0.35s,
-    transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
 }
 
 .work-card:hover::before,
@@ -1632,20 +1628,18 @@ button {
   font-size: 17px;
   flex-shrink: 0;
   transform: scale(0.5) rotate(-45deg);
-  transition:
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    background 0.3s;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s;
 }
 
 .work-card:hover .work-arrow {
   transform: scale(1) rotate(0deg);
 }
+
 .work-arrow:hover {
   background: var(--accent);
   color: #fff;
 }
 
-/* Lightbox */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -1706,9 +1700,7 @@ button {
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition:
-    background 0.25s,
-    transform 0.25s;
+  transition: background 0.25s, transform 0.25s;
   z-index: 100001;
   backdrop-filter: blur(4px);
 }
@@ -1741,10 +1733,7 @@ button {
   line-height: 1.5;
 }
 
-/* ===========================
-   CTA SECTION
-   =========================== */
-
+/* ==== Cta Section ==== */
 .cta-section {
   position: relative;
   min-height: 90vh;
@@ -1754,20 +1743,131 @@ button {
   overflow: hidden;
   padding: 80px 40px;
   margin: 40px -40px;
+  background: #060818;
+  isolation: isolate;
 }
 
-[data-theme="dark"] .cta-section {
-  background: #040609;
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124, 58, 237, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 35% at 90% 90%, rgba(124, 58, 237, 0.1) 0%, transparent 55%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cta-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .cta-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
-  background-size: 28px 28px;
-  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cta-bg::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 58, 237, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ctaPulse 6s ease-in-out infinite;
+}
+
+.cta-bg::after {
+  content: "";
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 58, 237, 0.06);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ctaPulse 6s ease-in-out infinite 1.5s;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+}
+
+.cta-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cta-particle {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.7);
+  transform: scale(var(--s));
+  animation: ctaFloat 5s ease-in-out infinite var(--d);
+}
+
+.cta-particle::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.25);
+  animation: ctaGlow 2.5s ease-in-out infinite var(--d);
+}
+
+@keyframes ctaFloat {
+  0%, 100% { transform: scale(var(--s)) translateY(0px); opacity: 0.8; }
+  50% { transform: scale(var(--s)) translateY(-10px); opacity: 1; }
+}
+
+@keyframes ctaGlow {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(2.5); opacity: 0.1; }
+}
+
+.cta-code-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cta-code {
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: rgba(124, 58, 237, 1);
+  opacity: var(--op);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 .cta-content {
@@ -1780,12 +1880,16 @@ button {
 
 .cta-tag {
   display: inline-block;
-  color: var(--accent);
+  color: rgba(124, 58, 237, 0.9);
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 28px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  padding: 6px 16px;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
 }
 
 .cta-title {
@@ -1794,13 +1898,13 @@ button {
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -3px;
+  color: #fff;
 }
 
 .cta-title span {
   color: var(--accent);
 }
 
-/* Newsletter */
 .cta-newsletter {
   margin-top: 64px;
   display: flex;
@@ -1811,31 +1915,25 @@ button {
 
 .cta-newsletter-label {
   font-size: 14px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .cta-newsletter-form {
   display: flex;
   align-items: center;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(124, 58, 237, 0.25);
   border-radius: 999px;
   padding: 5px 5px 5px 22px;
   width: 100%;
   max-width: 460px;
-  transition:
-    border-color 0.3s,
-    box-shadow 0.3s;
-}
-
-[data-theme="dark"] .cta-newsletter-form {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(8px);
 }
 
 .cta-newsletter-form:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
 }
 
 .cta-newsletter-form input {
@@ -1844,13 +1942,13 @@ button {
   border: none;
   outline: none;
   font-size: 14px;
-  color: var(--text);
+  color: #fff;
   font-family: var(--font-main);
   min-width: 0;
 }
 
 .cta-newsletter-form input::placeholder {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .cta-newsletter-submit {
@@ -1870,10 +1968,16 @@ button {
   gap: 8px;
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.25s,
-    background 0.25s;
+  transition: transform 0.25s, background 0.25s;
   flex-shrink: 0;
+}
+
+.cta-newsletter-submit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  border-radius: 999px;
 }
 
 .cta-newsletter-submit:hover {
@@ -1887,7 +1991,7 @@ button {
 
 .cta-newsletter-note {
   font-size: 12px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1895,7 +1999,7 @@ button {
 
 .cta-newsletter-note i {
   font-size: 13px;
-  color: var(--accent);
+  color: rgba(124, 58, 237, 0.8);
 }
 
 .cta-newsletter-success {
@@ -1913,15 +2017,14 @@ button {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+[data-theme="light"] .cta-section {
+  background: #0a0a14;
+}
+
 
 /* ===========================
    CONTACT SECTION
@@ -1941,11 +2044,7 @@ button {
   width: 560px;
   height: 560px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(124, 58, 237, 0.07) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1957,25 +2056,22 @@ button {
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(124, 58, 237, 0.05) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .contact-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
   position: relative;
   z-index: 1;
 }
 
+/* Header */
 .contact-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .contact-pill {
@@ -1994,9 +2090,9 @@ button {
 
 .contact-title {
   font-family: var(--font-heading);
-  font-size: clamp(44px, 6vw, 72px);
+  font-size: clamp(36px, 5.5vw, 68px);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -1px;
 }
 
@@ -2009,19 +2105,20 @@ button {
   font-size: 15px;
   line-height: 1.8;
   color: var(--muted);
-  max-width: 520px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Grid */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 52px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
   align-items: start;
 }
 
-/* Contact left */
+/* ---- Left Column ---- */
 .contact-left {
   display: flex;
   flex-direction: column;
@@ -2040,10 +2137,7 @@ button {
   color: var(--text);
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.3s,
-    border-color 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 [data-theme="dark"] .contact-info-card {
@@ -2078,9 +2172,7 @@ button {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  transition:
-    background 0.3s,
-    transform 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .contact-info-card:hover .contact-icon-box {
@@ -2115,11 +2207,13 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }
 
 .contact-socials {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   margin-top: 6px;
 }
 
@@ -2131,11 +2225,10 @@ button {
   display: grid;
   place-items: center;
   color: var(--text);
+  text-decoration: none;
   position: relative;
   overflow: hidden;
-  transition:
-    color 0.3s,
-    border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
 }
 
 .contact-socials a::before {
@@ -2150,19 +2243,21 @@ button {
 .contact-socials a:hover::before {
   transform: translateY(0);
 }
+
 .contact-socials a:hover {
   color: #fff;
   border-color: var(--accent);
 }
+
 .contact-socials a i {
   font-size: 17px;
   position: relative;
   z-index: 1;
 }
 
-/* Contact form */
+/* ---- Right Column: Form ---- */
 .contact-form {
-  padding: 48px 44px;
+  padding: 44px 40px;
   border-radius: var(--radius-lg);
   background: var(--bg);
   border: 1px solid var(--border);
@@ -2196,7 +2291,7 @@ button {
 .form-subtitle {
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .form-row {
@@ -2236,9 +2331,7 @@ button {
   font-size: 14px;
   font-family: var(--font-main);
   outline: none;
-  transition:
-    border-color 0.3s,
-    box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus,
@@ -2269,9 +2362,7 @@ button {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-btn::after {
@@ -2307,6 +2398,7 @@ button {
 .contact-btn span {
   transition: letter-spacing 0.3s;
 }
+
 .contact-btn:hover span {
   letter-spacing: 1.5px;
 }
@@ -2314,23 +2406,16 @@ button {
 .contact-btn i {
   transition: transform 0.3s;
 }
+
 .contact-btn:hover i {
   animation: iconBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes iconBounce {
-  0% {
-    transform: translateX(0) rotate(0deg);
-  }
-  40% {
-    transform: translateX(6px) rotate(-15deg);
-  }
-  70% {
-    transform: translateX(-3px) rotate(5deg);
-  }
-  100% {
-    transform: translateX(0) rotate(0deg);
-  }
+  0%   { transform: translateX(0) rotate(0deg); }
+  40%  { transform: translateX(6px) rotate(-15deg); }
+  70%  { transform: translateX(-3px) rotate(5deg); }
+  100% { transform: translateX(0) rotate(0deg); }
 }
 
 .contact-btn:disabled {
@@ -2341,6 +2426,7 @@ button {
 .form-status {
   display: none;
 }
+
 
 /* ===========================
    TOAST

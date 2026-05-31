@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="./Assets/icons/favicon.png" />
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
     />
-
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/media.css" />
 
@@ -29,20 +28,6 @@
         <span class="toast-text" id="toastText">Message sent!</span>
       </div>
       <div class="toast-progress" id="toastProgress"></div>
-    </div>
-
-    <!-- ========== LIGHTBOX ========== -->
-    <div class="lightbox-overlay" id="lightboxOverlay">
-      <button class="lightbox-close" id="lightboxClose">
-        <i class="ri-close-line"></i>
-      </button>
-      <div class="lightbox-inner">
-        <img src="" alt="" id="lightboxImg" />
-        <div class="lightbox-caption">
-          <h3 id="lightboxTitle"></h3>
-          <p id="lightboxDesc"></p>
-        </div>
-      </div>
     </div>
 
     <div id="main-container">
@@ -130,7 +115,10 @@
                 class="follow-icon"
                 ><i class="ri-linkedin-line"></i
               ></a>
-              <a href="#" class="resume-outline">Download Resume</a>
+              <a href="#" class="resume-outline">
+                <i class="ri-mobile-download-line"></i>
+                Download Resume
+              </a>
             </div>
           </div>
         </div>
@@ -179,9 +167,9 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-icon bootstrap"></div>
+            <div class="skill-icon tailwind"></div>
             <div class="skill-info">
-              <span>Bootstrap</span>
+              <span>Tailwind Css</span>
               <strong>65%</strong>
             </div>
           </div>
@@ -391,9 +379,13 @@
               </div>
               <h4>B.Sc (IT) : Information Technology</h4>
               <p>
-                Built strong fundamentals in computer science, programming,
-                problem-solving, databases, and modern web technologies with
-                real-world application focus.
+                Completed Bachelor of Science in Information Technology (B.Sc
+                IT) from Modern Institute of Technology, Rishikesh, between 2017
+                and 2020. The program provided a strong academic foundation in
+                Information Technology, covering web technologies, database
+                management, software development, computer fundamentals, and
+                problem-solving skills, preparing me for a professional career
+                in the IT industry.
               </p>
             </div>
             <div class="tl-connector"><span class="tl-dot"></span></div>
@@ -414,9 +406,14 @@
               </div>
               <h4>MCA : Master of Computer Applications</h4>
               <p>
-                Enhanced expertise in full-stack development, system
-                architecture, user-centered design, performance optimization,
-                and scalable application development.
+                Completed Master of Computer Applications (MCA) from Graphic Era
+                Hill University, Dehradun, between 2020 and 2022. The program
+                enhanced my understanding of advanced computer applications,
+                software development, database management, web technologies, and
+                system analysis. Through academic projects and practical
+                learning, I strengthened my technical, analytical, and
+                problem-solving skills, building a strong foundation for a
+                career in the IT and digital technology industry.
               </p>
             </div>
           </div>
@@ -428,13 +425,18 @@
                 <img src="./Assets/education/mahi.png" alt="Mahi Creations" />
                 <div>
                   <h3>Mahi Creations</h3>
-                  <span class="tl-year">2024 – 2025</span>
+                  <span class="tl-year">2024 - 2025</span>
                 </div>
               </div>
               <h4>Web & UI/UX Designer</h4>
               <p>
-                Led design execution, improved UX flows, and ensured visual
-                consistency across responsive digital products.
+                Worked as a Web Designer & UI/UX Designer at Mahi Creations from
+                2024 to 2025, creating responsive websites, user-friendly
+                interfaces, and visually engaging digital experiences.
+                Collaborated on website design, wireframing, prototyping, and
+                user experience improvements while ensuring modern design
+                standards, usability, and cross-device compatibility across
+                multiple projects.
               </p>
             </div>
             <div class="tl-connector"><span class="tl-dot"></span></div>
@@ -453,11 +455,15 @@
                   <span class="tl-year">2025 – Present</span>
                 </div>
               </div>
-              <h4>Web & UI/UX Designer</h4>
+              <h4>UI/UX Designer & UI Developer</h4>
               <p>
-                Designing scalable websites, brand systems, and digital
-                experiences with a strong focus on usability, performance, and
-                visual clarity.
+                Working as a UI/UX Designer & UI Developer at Aucourant
+                Technologies Pvt. Ltd. since 2025, creating modern, responsive,
+                and user-centric digital experiences. Responsible for designing
+                intuitive interfaces, developing interactive UI components,
+                improving user journeys, and collaborating with development
+                teams to deliver visually engaging and high-performance web
+                applications.
               </p>
             </div>
           </div>
@@ -481,10 +487,7 @@
               <button class="carousel-btn" id="prevSlide">
                 <i class="ri-arrow-left-line"></i>
               </button>
-              <div class="carousel-dots" id="carouselDots">
-                <span class="cdot active"></span>
-                <span class="cdot"></span>
-              </div>
+              <div class="carousel-dots" id="carouselDots"></div>
               <button class="carousel-btn" id="nextSlide">
                 <i class="ri-arrow-right-line"></i>
               </button>
@@ -493,141 +496,126 @@
 
           <div class="carousel-wrapper">
             <div class="work-grid" id="carouselTrack">
-              <!-- Slide 1 -->
-              <div class="carousel-slide">
-                <div class="work-card">
-                  <div class="work-media">
-                    <img src="./Assets/Projects/product01.png" alt="SE-LMS" />
-                  </div>
-                  <div class="work-overlay">
-                    <div class="work-content">
-                      <h3>SE LMS</h3>
-                      <p>
-                        A simple and user-friendly learning management system
-                        designed to manage online courses and student progress.
-                      </p>
-                    </div>
-                    <a href="https://selms.org/" class="work-arrow">
-                      <i class="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
+              <div class="work-card">
+                <div class="work-media">
+                  <img src="./Assets/Projects/product01.png" alt="SE-LMS" />
                 </div>
-
-                <div class="work-card">
-                  <div class="work-media">
-                    <img
-                      src="./Assets/Projects/AI Study Assistance.png"
-                      alt="AI Study Assistance"
-                    />
+                <div class="work-overlay">
+                  <div class="work-content">
+                    <h3>SE LMS</h3>
+                    <p>
+                      A simple and user-friendly learning management system
+                      designed to manage online courses and student progress.
+                    </p>
                   </div>
-                  <div class="work-overlay">
-                    <div class="work-content">
-                      <h3>AI Study Assistance</h3>
-                      <p>
-                        Smart AI that helps you study better, understand faster,
-                        and stay organized with personalized learning support.
-                      </p>
-                    </div>
-                    <a
-                      href="https://www.figma.com/design/o5WljreJkHYsYNgVyk6OKs/"
-                      class="work-arrow"
-                    >
-                      <i class="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="work-card">
-                  <div class="work-media">
-                    <img
-                      src="./Assets/Projects/product03.png"
-                      alt="cvNext AI"
-                    />
-                  </div>
-                  <div class="work-overlay">
-                    <div class="work-content">
-                      <h3>CVNext - AI Resume Builder App</h3>
-                      <p>
-                        Designed an AI-powered mobile app for creating
-                        professional, ATS-optimized resumes with modern UI/UX,
-                        smart resume assistance, and customizable templates.
-                      </p>
-                    </div>
-                    <a href="https://cvnext.ai/" class="work-arrow">
-                      <i class="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
+                  <a href="https://selms.org/" class="work-arrow">
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
                 </div>
               </div>
 
-              <!-- Slide 2 -->
-              <div class="carousel-slide">
-                <div class="work-card">
-                  <div class="work-media">
-                    <img src="./Assets/Projects/product04.jpeg" alt="NexTalk" />
-                  </div>
-                  <div class="work-overlay">
-                    <div class="work-content">
-                      <h3>NexTalk - Chat Messenger App</h3>
-                      <p>
-                        NexTalk is a modern chat messenger application designed
-                        with a clean and intuitive user interface for seamless
-                        communication.
-                      </p>
-                    </div>
-                    <a
-                      href="https://nextalk-dev.vercel.app/"
-                      class="work-arrow"
-                    >
-                      <i class="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
+              <div class="work-card">
+                <div class="work-media">
+                  <img
+                    src="./Assets/Projects/AI Study Assistance.png"
+                    alt="AI Study Assistance"
+                  />
                 </div>
-
-                <div class="work-card">
-                  <div class="work-media">
-                    <img
-                      src="./Assets/Projects/product05.jpeg"
-                      alt="BrainWave AI"
-                    />
+                <div class="work-overlay">
+                  <div class="work-content">
+                    <h3>AI Study Assistance</h3>
+                    <p>
+                      Smart AI that helps you study better, understand faster,
+                      and stay organized with personalized learning support.
+                    </p>
                   </div>
-                  <div class="work-overlay">
-                    <div class="work-content">
-                      <h3>BrainWave AI - Intelligence Assistant</h3>
-                      <p>
-                        BrainWave AI is a modern AI assistant interface designed
-                        to deliver smart conversations, quick answers, and an
-                        engaging user experience.
-                      </p>
-                    </div>
-                    <a
-                      href="https://aibrainwave-ten.vercel.app/"
-                      class="work-arrow"
-                    >
-                      <i class="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
+                  <a
+                    href="https://www.figma.com/design/o5WljreJkHYsYNgVyk6OKs/"
+                    class="work-arrow"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
                 </div>
+              </div>
 
-                <div class="work-card">
-                  <div class="work-media">
-                    <img
-                      src="./Assets/Projects/product06.png"
-                      alt="Project 6"
-                    />
+              <div class="work-card">
+                <div class="work-media">
+                  <img src="./Assets/Projects/product03.png" alt="cvNext AI" />
+                </div>
+                <div class="work-overlay">
+                  <div class="work-content">
+                    <h3>CVNext - AI Resume Builder App</h3>
+                    <p>
+                      Designed an AI-powered mobile app for creating
+                      professional, ATS-optimized resumes with modern UI/UX,
+                      smart resume assistance, and customizable templates.
+                    </p>
                   </div>
-                  <div class="work-overlay">
-                    <div class="work-content">
-                      <h3>Project Six</h3>
-                      <p>
-                        Brand system and UI kit built to scale across multiple
-                        touchpoints with consistent visual language.
-                      </p>
-                    </div>
-                    <a href="#" class="work-arrow">
-                      <i class="ri-arrow-right-up-line"></i>
-                    </a>
+                  <a href="https://cvnext.ai/" class="work-arrow">
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="work-card">
+                <div class="work-media">
+                  <img src="./Assets/Projects/product04.jpeg" alt="NexTalk" />
+                </div>
+                <div class="work-overlay">
+                  <div class="work-content">
+                    <h3>NexTalk - Chat Messenger App</h3>
+                    <p>
+                      NexTalk is a modern chat messenger application designed
+                      with a clean and intuitive user interface for seamless
+                      communication.
+                    </p>
                   </div>
+                  <a href="https://nextalk-dev.vercel.app/" class="work-arrow">
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="work-card">
+                <div class="work-media">
+                  <img
+                    src="./Assets/Projects/product05.jpeg"
+                    alt="BrainWave AI"
+                  />
+                </div>
+                <div class="work-overlay">
+                  <div class="work-content">
+                    <h3>BrainWave AI - Intelligence Assistant</h3>
+                    <p>
+                      BrainWave AI is a modern AI assistant interface designed
+                      to deliver smart conversations, quick answers, and an
+                      engaging user experience.
+                    </p>
+                  </div>
+                  <a
+                    href="https://aibrainwave-ten.vercel.app/"
+                    class="work-arrow"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="work-card">
+                <div class="work-media">
+                  <img src="./Assets/Projects/product06.png" alt="Project 6" />
+                </div>
+                <div class="work-overlay">
+                  <div class="work-content">
+                    <h3>Project Six</h3>
+                    <p>
+                      Brand system and UI kit built to scale across multiple
+                      touchpoints with consistent visual language.
+                    </p>
+                  </div>
+                  <a href="#" class="work-arrow">
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -638,14 +626,66 @@
       <!-- ========== CTA Section ========== -->
       <section class="cta-section" id="CTA">
         <div class="cta-bg"></div>
+        <div class="cta-particles">
+          <span
+            class="cta-particle"
+            style="--x: 10%; --y: 20%; --s: 0.6; --d: 0s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 85%; --y: 15%; --s: 0.4; --d: 1.2s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 25%; --y: 75%; --s: 0.7; --d: 0.6s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 70%; --y: 65%; --s: 0.5; --d: 2s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 50%; --y: 10%; --s: 0.3; --d: 1.5s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 90%; --y: 80%; --s: 0.6; --d: 0.3s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 5%; --y: 60%; --s: 0.4; --d: 1s"
+          ></span>
+          <span
+            class="cta-particle"
+            style="--x: 60%; --y: 90%; --s: 0.5; --d: 1.8s"
+          ></span>
+        </div>
+        <div class="cta-code-lines">
+          <span class="cta-code" style="--top: 8%; --left: 2%; --op: 0.07"
+            >const vision = () => buildFuture();</span
+          >
+          <span class="cta-code" style="--top: 18%; --left: 68%; --op: 0.06"
+            >npm install creativity</span
+          >
+          <span class="cta-code" style="--top: 72%; --left: 3%; --op: 0.07"
+            >git commit -m "launch 🚀"</span
+          >
+          <span class="cta-code" style="--top: 82%; --left: 60%; --op: 0.06"
+            >design.system({ scale: ∞ })</span
+          >
+          <span class="cta-code" style="--top: 35%; --left: 75%; --op: 0.05"
+            >while(true) { innovate(); }</span
+          >
+          <span class="cta-code" style="--top: 55%; --left: 1%; --op: 0.06"
+            >export default Excellence;</span
+          >
+        </div>
         <div class="cta-content">
           <span class="cta-tag">Get's Started a Projects?</span>
           <h2 class="cta-title">
             LET'S WORK<br />
             TOGETHER<span>.</span>
           </h2>
-
-          <!-- FIX 4: Newsletter form instead of social pills -->
           <div class="cta-newsletter">
             <p class="cta-newsletter-label">
               Get design tips &amp; project updates in your inbox
@@ -663,7 +703,7 @@
                 onclick="handleNewsletter()"
               >
                 <i class="ri-send-plane-line"></i>
-                SUBSCRIBE
+                <span class="btn-text">SUBSCRIBE</span>
               </button>
             </div>
             <div class="cta-newsletter-success" id="newsletterSuccess">
@@ -678,146 +718,109 @@
         </div>
       </section>
 
-      <!-- ========== CONTACT ========== -->
-      <section class="contact-section" id="contact">
-        <div class="contact-container">
-          <div class="contact-header">
-            <span class="contact-pill">CONTACT</span>
-            <h2 class="contact-title">Let's <span>Work</span> Together</h2>
-            <p class="contact-desc">
-              Whether you're looking to build a product, improve user
-              experience, or need long-term design support — feel free to reach
-              out.
-            </p>
+<!-- ========== CONTACT ========== -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-header">
+      <span class="contact-pill">CONTACT</span>
+      <h2 class="contact-title">Ready To <span>Collaborate</span>?</h2>
+      <p class="contact-desc">
+        Whether you're looking to build a product, improve user
+        experience, or need long-term design support — feel free to reach
+        out.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- LEFT: Info cards -->
+      <div class="contact-left">
+        <a href="mailto:work.manishbisht@gmail.com" class="contact-info-card">
+          <div class="contact-icon-box">
+            <i class="ri-mail-send-line"></i>
           </div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Email</span>
+            <span class="contact-info-value">work.manishbisht@gmail.com</span>
+          </div>
+        </a>
 
-          <div class="contact-grid">
-            <!-- LEFT: Info cards -->
-            <div class="contact-left">
-              <a
-                href="mailto:work.manishbisht@gmail.com"
-                class="contact-info-card"
-              >
-                <div class="contact-icon-box">
-                  <i class="ri-mail-send-line"></i>
-                </div>
-                <div class="contact-info-text">
-                  <span class="contact-info-label">Email</span>
-                  <span class="contact-info-value"
-                    >work.manishbisht@gmail.com</span
-                  >
-                </div>
-              </a>
+        <a href="tel:+919897596282" class="contact-info-card">
+          <div class="contact-icon-box">
+            <i class="ri-phone-line"></i>
+          </div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Phone</span>
+            <span class="contact-info-value">+91 9897596282</span>
+          </div>
+        </a>
 
-              <a href="tel:+919897596282" class="contact-info-card">
-                <div class="contact-icon-box">
-                  <i class="ri-phone-line"></i>
-                </div>
-                <div class="contact-info-text">
-                  <span class="contact-info-label">Phone</span>
-                  <span class="contact-info-value">+91 9897596282</span>
-                </div>
-              </a>
+        <a href="https://www.google.com/maps?q=Dehradun,India" target="_blank" class="contact-info-card">
+          <div class="contact-icon-box">
+            <i class="ri-map-pin-2-line"></i>
+          </div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Location</span>
+            <span class="contact-info-value">Dehradun, India</span>
+          </div>
+        </a>
 
-              <a
-                href="https://www.google.com/maps?q=Dehradun,India"
-                target="_blank"
-                class="contact-info-card"
-              >
-                <div class="contact-icon-box">
-                  <i class="ri-map-pin-2-line"></i>
-                </div>
-                <div class="contact-info-text">
-                  <span class="contact-info-label">Location</span>
-                  <span class="contact-info-value">Dehradun, India</span>
-                </div>
-              </a>
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/manish-bisht-ba2618337/" target="_blank">
+            <i class="ri-linkedin-line"></i>
+          </a>
+          <a href="https://github.com/workmanishbisht" target="_blank">
+            <i class="ri-github-line"></i>
+          </a>
+          <a href="https://www.instagram.com/manish_bisht_official/" target="_blank">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://wa.me/919897596282" target="_blank">
+            <i class="ri-whatsapp-line"></i>
+          </a>
+        </div>
+      </div>
 
-              <div class="contact-socials">
-                <a
-                  href="https://www.linkedin.com/in/manish-bisht-ba2618337/"
-                  target="_blank"
-                >
-                  <i class="ri-linkedin-line"></i>
-                </a>
-                <a href="https://github.com/workmanishbisht" target="_blank">
-                  <i class="ri-github-line"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/manish_bisht_official/"
-                  target="_blank"
-                >
-                  <i class="ri-instagram-line"></i>
-                </a>
-                <a href="https://wa.me/919897596282" target="_blank">
-                  <i class="ri-whatsapp-line"></i>
-                </a>
-              </div>
-            </div>
+      <!-- RIGHT: Form -->
+      <form class="contact-form" id="contactForm">
+        <div class="form-title">Send a Message</div>
+        <div class="form-subtitle">I usually respond within 24 hours.</div>
 
-            <!-- RIGHT: Form -->
-            <form class="contact-form" id="contactForm">
-              <div class="form-title">Send a Message</div>
-              <div class="form-subtitle">
-                I usually respond within 24 hours.
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label>Your Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label>Your Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label>Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Project inquiry..."
-                />
-              </div>
-
-              <div class="form-group">
-                <label>Your Message</label>
-                <textarea
-                  name="message"
-                  rows="5"
-                  placeholder="Tell me about your project..."
-                  required
-                ></textarea>
-              </div>
-
-              <!-- FIX 5: Updated button -->
-              <button type="submit" class="contact-btn">
-                <span>Send Message</span>
-                <i class="ri-send-plane-line"></i>
-              </button>
-
-              <div id="formStatus" class="form-status"></div>
-            </form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="john@example.com" required />
           </div>
         </div>
-      </section>
+
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="Project inquiry..." />
+        </div>
+
+        <div class="form-group">
+          <label>Your Message</label>
+          <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+
+        <button type="submit" class="contact-btn">
+          <span>Send Message</span>
+          <i class="ri-send-plane-line"></i>
+        </button>
+
+        <div id="formStatus" class="form-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
 
       <!-- FIX 5b: Copyright Footer -->
       <footer class="footer-copyright">
         <div class="footer-left">
-          <span>© 2026</span>
+        <span>© <script>document.write(new Date().getFullYear())</script></span>
           <strong>Manish Bisht</strong>
           <span>·</span>
           <span>Made with</span>
@@ -835,8 +838,8 @@
             >LinkedIn</a
           >
           <div class="footer-dot"></div>
-          <a href="https://www.behance.net/manishbisht13" target="_blank"
-            >Behance</a
+          <a href="https://github.com/workmanishbisht" target="_blank"
+            >Github</a
           >
         </div>
       </footer>

@@ -149,7 +149,6 @@
     max-width: 100%;
   }
 
-  /* 2 cols on tablet */
   .carousel-slide {
     grid-template-columns: 1fr 1fr;
     gap: 14px;
@@ -181,9 +180,20 @@
     gap: 40px;
   }
 
-  /* Contact info cards — full width on tablet */
+  .contact-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .contact-info-card {
     width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-socials {
+    flex-wrap: wrap;
   }
 
   .form-row {
@@ -191,7 +201,7 @@
   }
 
   .contact-form {
-    padding: 32px 28px;
+    padding: 36px 32px;
   }
 }
 
@@ -200,10 +210,14 @@
    ============================================= */
 
 @media (max-width: 720px) {
-  /* 1 col carousel */
   .carousel-slide {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .work-card {
+    height: 240px;
+    width: 100%;
   }
 
   /* Services 1 col */
@@ -232,6 +246,16 @@
     width: 100%;
     justify-content: space-between;
   }
+
+  /* Contact form row back to 1 col */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-form {
+    padding: 28px 22px;
+  }
 }
 
 /* =============================================
@@ -239,7 +263,6 @@
    ============================================= */
 
 @media (max-width: 576px) {
-  /* Zero side padding — full bleed layout */
   #main-container {
     padding: 0 16px;
   }
@@ -514,7 +537,6 @@
     font-size: 13px;
   }
 
-  /* Full-width single cards */
   .carousel-slide {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -530,6 +552,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .work-overlay {
+    opacity: 1;
+  }
+
+  .work-content h3 {
+    transform: translateY(0);
+  }
+
+  .work-content p {
+    transform: translateY(0);
+  }
+
+  .work-arrow {
+    transform: scale(1) rotate(0deg);
   }
 
   /* ── CTA ── */
@@ -564,7 +602,6 @@
     gap: 6px;
   }
 
-  /* Hide text, show only icon on very small screens */
   .cta-newsletter-submit .btn-text {
     display: none;
   }
@@ -599,14 +636,17 @@
     gap: 24px;
   }
 
-  /* Contact info — full width + centered */
   .contact-left {
     width: 100%;
     align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .contact-info-card {
     width: 100%;
+    box-sizing: border-box;
     padding: 16px 18px;
     justify-content: flex-start;
     border-radius: 14px;
@@ -633,11 +673,11 @@
     word-break: break-all;
   }
 
-  /* Social icons row — centered */
   .contact-socials {
     justify-content: center;
     gap: 10px;
     margin-top: 4px;
+    flex-wrap: wrap;
   }
 
   .contact-socials a {
@@ -645,7 +685,6 @@
     height: 42px;
   }
 
-  /* Contact form */
   .contact-form {
     padding: 22px 16px;
     border-radius: 16px;
@@ -681,8 +720,13 @@
     transform: translateY(-120px);
   }
 
-  .toast-container.show { transform: translateY(0); }
-  .toast-container.hide { transform: translateY(-120px); }
+  .toast-container.show {
+    transform: translateY(0);
+  }
+
+  .toast-container.hide {
+    transform: translateY(-120px);
+  }
 
   .toast {
     width: 100%;
@@ -714,6 +758,35 @@
   .footer-right a {
     font-size: 11px;
   }
+
+  .contact-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-info-card {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 16px 18px;
+  border-radius: 14px;
+}
+
+.contact-socials {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.contact-form {
+  width: 100%;
+  box-sizing: border-box;
+}
 }
 
 /* =============================================
@@ -735,7 +808,6 @@
     letter-spacing: -1px;
   }
 
-  /* 1-column skills on very small phones */
   .about-skills {
     grid-template-columns: 1fr;
   }
@@ -783,3 +855,5 @@
     right: 8px;
   }
 }
+
+

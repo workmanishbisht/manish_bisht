@@ -1,10 +1,4 @@
-/* ================================================================
-   PORTFOLIO — script.js
-   ================================================================ */
-
 gsap.registerPlugin(ScrollTrigger);
-
-/* ─── HERO ANIMATIONS ──────────────────────────────────────────── */
 
 gsap.from(".hero-tag", {
   y: -20,
@@ -48,7 +42,6 @@ gsap.from(".hero-right", {
   ease: "power3.out",
 });
 
-// Parallax on scroll
 gsap.to(".hero-left", {
   scrollTrigger: {
     trigger: ".hero",
@@ -71,8 +64,6 @@ gsap.to(".hero-right", {
   ease: "none",
 });
 
-/* ─── ABOUT ────────────────────────────────────────────────────── */
-
 gsap.from(".about-pill", {
   scrollTrigger: { trigger: ".about", start: "top 85%" },
   y: 18,
@@ -81,7 +72,6 @@ gsap.from(".about-pill", {
   ease: "power3.out",
 });
 
-// Word-by-word reveal
 const aboutText = document.querySelector(".scroll-text");
 if (aboutText) {
   const words = aboutText.innerText.trim().split(/\s+/);
@@ -103,7 +93,6 @@ if (aboutText) {
   });
 }
 
-// Skill cards
 gsap.from(".skill-card", {
   scrollTrigger: { trigger: ".about-skills", start: "top 88%" },
   y: 36,
@@ -112,8 +101,6 @@ gsap.from(".skill-card", {
   duration: 0.65,
   ease: "power3.out",
 });
-
-/* ─── SERVICES ─────────────────────────────────────────────────── */
 
 gsap.from(".services-head h2", {
   scrollTrigger: { trigger: ".services", start: "top 85%" },
@@ -140,8 +127,6 @@ gsap.from(".svc-card", {
   duration: 0.85,
   ease: "power4.out",
 });
-
-/* ─── TIMELINE ─────────────────────────────────────────────────── */
 
 gsap.from(".timeline-head h2", {
   scrollTrigger: { trigger: ".timeline-head", start: "top 85%" },
@@ -191,46 +176,88 @@ if (!isMobile) {
   });
 }
 
-/* ─── WORK CAROUSEL ────────────────────────────────────────────── */
-
-const track = document.getElementById("carouselTrack");
-const dots = document.querySelectorAll(".cdot");
+const carouselWrapper = document.querySelector(".carousel-wrapper");
+const dotsContainer = document.getElementById("carouselDots");
 const prevBtn = document.getElementById("prevSlide");
 const nextBtn = document.getElementById("nextSlide");
-const slides = document.querySelectorAll(".carousel-slide");
+
+const allCards = Array.from(document.querySelectorAll(".work-card"));
+
+function getCardsPerSlide() {
+  if (window.innerWidth <= 720) return 1;
+  if (window.innerWidth <= 992) return 2;
+  return 3;
+}
 
 let current = 0;
-const total = slides.length;
+let slides = [];
+
+function buildCarousel() {
+  const perSlide = getCardsPerSlide();
+  const track = document.getElementById("carouselTrack");
+
+  track.innerHTML = "";
+  slides = [];
+
+  for (let i = 0; i < allCards.length; i += perSlide) {
+    const slide = document.createElement("div");
+    slide.className = "carousel-slide";
+    allCards.slice(i, i + perSlide).forEach((card) => slide.appendChild(card));
+    track.appendChild(slide);
+    slides.push(slide);
+  }
+
+  const total = slides.length;
+  track.style.width = total * 100 + "%";
+  slides.forEach((s) => (s.style.width = 100 / total + "%"));
+
+  dotsContainer.innerHTML = "";
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.className = "cdot" + (i === 0 ? " active" : "");
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  current = 0;
+  goTo(0);
+}
 
 function goTo(index) {
-  current = (index + total) % total;
-  track.style.transform = `translateX(-${current * 50}%)`;
-  dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  const total = slides.length;
+  current = ((index % total) + total) % total;
+  const track = document.getElementById("carouselTrack");
+  track.style.transform = `translateX(-${current * (100 / slides.length)}%)`;
+  document
+    .querySelectorAll(".cdot")
+    .forEach((d, i) => d.classList.toggle("active", i === current));
 }
 
 prevBtn.addEventListener("click", () => goTo(current - 1));
 nextBtn.addEventListener("click", () => goTo(current + 1));
-dots.forEach((d, i) => d.addEventListener("click", () => goTo(i)));
 
-// Touch / swipe
 let touchStartX = 0;
-const wrapper = document.querySelector(".carousel-wrapper");
-
-wrapper.addEventListener(
+carouselWrapper.addEventListener(
   "touchstart",
   (e) => {
     touchStartX = e.changedTouches[0].screenX;
   },
   { passive: true },
 );
-
-wrapper.addEventListener("touchend", (e) => {
+carouselWrapper.addEventListener("touchend", (e) => {
   const diff = touchStartX - e.changedTouches[0].screenX;
   if (diff > 50) goTo(current + 1);
   if (diff < -50) goTo(current - 1);
 });
 
-// Work section entry animations
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(buildCarousel, 200);
+});
+
+buildCarousel();
+
 gsap.from(".work-pill", {
   scrollTrigger: { trigger: ".latest-work", start: "top 85%" },
   y: 16,
@@ -257,56 +284,6 @@ gsap.from(".carousel-controls", {
   duration: 0.7,
   delay: 0.26,
 });
-gsap.from(".carousel-slide:first-child .work-card", {
-  scrollTrigger: { trigger: ".carousel-wrapper", start: "top 80%" },
-  y: 54,
-  opacity: 0,
-  stagger: 0.13,
-  duration: 0.8,
-  ease: "power3.out",
-});
-
-/* ─── LIGHTBOX ─────────────────────────────────────────────────── */
-
-const lightboxOverlay = document.getElementById("lightboxOverlay");
-const lightboxImg = document.getElementById("lightboxImg");
-const lightboxTitle = document.getElementById("lightboxTitle");
-const lightboxDesc = document.getElementById("lightboxDesc");
-const lightboxClose = document.getElementById("lightboxClose");
-
-document.querySelectorAll(".work-media").forEach((media) => {
-  media.addEventListener("click", () => {
-    const img = media.querySelector("img");
-    const card = media.closest(".work-card");
-    const title = card.querySelector(".work-content h3")?.textContent || "";
-    const desc = card.querySelector(".work-content p")?.textContent || "";
-
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxTitle.textContent = title;
-    lightboxDesc.textContent = desc;
-
-    lightboxOverlay.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-});
-
-function closeLightbox() {
-  lightboxOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
-lightboxClose.addEventListener("click", closeLightbox);
-
-lightboxOverlay.addEventListener("click", (e) => {
-  if (e.target === lightboxOverlay) closeLightbox();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeLightbox();
-});
-
-/* ─── CTA ANIMATIONS ───────────────────────────────────────────── */
 
 gsap.from(".cta-tag", {
   scrollTrigger: { trigger: ".cta-section", start: "top 80%" },
@@ -331,8 +308,6 @@ gsap.from(".cta-newsletter", {
   delay: 0.2,
   ease: "power3.out",
 });
-
-/* ─── CONTACT ANIMATIONS ───────────────────────────────────────── */
 
 gsap.from(".contact-header", {
   scrollTrigger: { trigger: ".contact-section", start: "top 82%" },
@@ -365,8 +340,6 @@ gsap.from(".contact-form", {
   ease: "power4.out",
 });
 
-/* ─── HEADER HIDE ON SCROLL ─────────────────────────────────────── */
-
 let lastScrollY = window.scrollY;
 const header = document.querySelector(".header");
 
@@ -387,8 +360,6 @@ window.addEventListener(
   { passive: true },
 );
 
-/* ─── FOLLOW ICON HOVER ─────────────────────────────────────────── */
-
 document.querySelectorAll(".follow-icon i").forEach((icon) => {
   icon.addEventListener("mouseenter", () =>
     motion.animate(icon, { scale: 1.2 }, { duration: 0.22 }),
@@ -397,8 +368,6 @@ document.querySelectorAll(".follow-icon i").forEach((icon) => {
     motion.animate(icon, { scale: 1 }, { duration: 0.22 }),
   );
 });
-
-/* ─── THEME TOGGLE ──────────────────────────────────────────────── */
 
 const themeToggle = document.getElementById("themeToggle");
 const savedTheme = localStorage.getItem("theme");
@@ -419,8 +388,6 @@ themeToggle?.addEventListener("click", () => {
   icon.className = newTheme === "dark" ? "ri-sun-line" : "ri-moon-line";
 });
 
-/* ─── TYPED.JS ──────────────────────────────────────────────────── */
-
 new Typed("#element", {
   strings: ["UI / UX", "WEB"],
   typeSpeed: 180,
@@ -428,8 +395,6 @@ new Typed("#element", {
   loop: true,
   cursorChar: "|",
 });
-
-/* ─── TOAST SYSTEM ──────────────────────────────────────────────── */
 
 const toastContainer = document.getElementById("toastContainer");
 const toastIcon = document.getElementById("toastIcon");
@@ -472,8 +437,6 @@ function hideToast() {
   toastContainer.classList.add("hide");
 }
 
-/* ─── NEWSLETTER ────────────────────────────────────────────────── */
-
 function handleNewsletter() {
   const input = document.getElementById("newsletterEmail");
   const form = document.getElementById("newsletterForm");
@@ -486,13 +449,10 @@ function handleNewsletter() {
     return;
   }
 
-  // Show success state
   form.style.display = "none";
   success.style.display = "flex";
   showToast("You're subscribed! Welcome aboard 🎉", "success");
 }
-
-/* ─── EMAIL JS (CONTACT FORM) ───────────────────────────────────── */
 
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof emailjs === "undefined") return;
@@ -544,15 +504,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // Clear red border on input
   contactForm.querySelectorAll("input, textarea").forEach((input) => {
     input.addEventListener("input", () => {
       input.style.borderColor = "";
     });
   });
 });
-
-/* ─── SCROLL TO CONTACT ─────────────────────────────────────────── */
 
 function scrollToContact() {
   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });

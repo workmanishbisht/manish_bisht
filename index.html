@@ -1,14 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Manish Bisht - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="./Assets/icons/favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/media.css" />
 
@@ -16,836 +14,760 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/motion@10.16.2/dist/motion.umd.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  </head>
+</head>
 
-  <body data-theme="light">
+<body data-theme="light">
     <!-- ========== TOAST ========== -->
     <div class="toast-container" id="toastContainer">
-      <div class="toast" id="toastEl">
-        <div class="toast-icon" id="toastIcon">
-          <i class="ri-check-line" id="toastIconI"></i>
+        <div class="toast" id="toastEl">
+            <div class="toast-icon" id="toastIcon">
+                <i class="ri-check-line" id="toastIconI"></i>
+            </div>
+            <span class="toast-text" id="toastText">Message sent!</span>
         </div>
-        <span class="toast-text" id="toastText">Message sent!</span>
-      </div>
-      <div class="toast-progress" id="toastProgress"></div>
+        <div class="toast-progress" id="toastProgress"></div>
     </div>
 
     <div id="main-container">
-      <!-- ========== HEADER ========== -->
-      <header class="header" id="header">
-        <div class="header-inner">
-          <div class="logo">
-            <div class="logo-main">
-              <a href="/" class="logo-link">
+        <!-- ========== HEADER ========== -->
+        <header class="header" id="header">
+            <div class="header-inner">
+                <div class="logo">
+                    <div class="logo-main">
+                        <a href="/" class="logo-link">
+                            <strong>Manish Bisht</strong>
+                        </a>
+                    </div>
+                    <span class="logo-since">Since . 2026</span>
+                </div>
+
+                <div class="header-info">
+                    <span class="location">
+                        <i class="ri-global-line"></i>
+                        Based on Dehradun, India
+                    </span>
+
+                    <span class="email-pill">
+                        <a href="mailto:work.manishbisht@gmail.com">
+                            Email: work.manishbisht@gmail.com
+                        </a>
+                    </span>
+                </div>
+
+                <div class="header-actions">
+                    <button id="themeToggle" class="menu-btn">
+                        <i class="ri-moon-line"></i>
+                    </button>
+
+                    <button class="menu-btn">
+                        <i class="ri-menu-3-line"></i>
+                    </button>
+
+                    <button class="talk-btn" onclick="scrollToContact()">
+                        <i class="ri-arrow-right-line"></i>
+                        LET'S TALK
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="hero">
+            <div class="hero-left">
+                <div class="hero-tag">
+                    Research, <br />
+                    Wireframe, Design
+                    <span class="line"></span>
+                </div>
+
+                <p class="intro">I'm Manish Bisht,</p>
+
+                <h1 class="title">
+                    <span id="element">UI / UX</span> <br />
+                    <span class="highlight">Developer</span>.
+                </h1>
+
+                <p class="subtitle">
+                    Designing intuitive, user-centered digital experiences that blend
+                    aesthetics and usability to create impactful, scalable, and
+                    meaningful products for modern brands and businesses.
+                </p>
+
+                <div class="follow-wrap">
+                    <span class="follow-title">Follow Me</span>
+
+                    <div class="follow-actions">
+                        <a href="#" class="follow-icon"><i class="ri-dribbble-line"></i></a>
+                        <a href="#" class="follow-icon"><i class="ri-pinterest-line"></i></a>
+                        <a href="https://www.behance.net/manishbisht13" class="follow-icon"><i
+                                class="ri-behance-line"></i></a>
+                        <a href="https://www.linkedin.com/in/manish-bisht-ba2618337/" class="follow-icon"><i
+                                class="ri-linkedin-line"></i></a>
+                        <a href="#" class="resume-outline">
+                            <i class="ri-mobile-download-line"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <img src="./Assets/icons/profileIcon.png" alt="profile" />
+            </div>
+        </section>
+
+        <!-- ========== ABOUT ========== -->
+        <section class="about" id="about">
+            <div class="about-head">
+                <span class="about-pill">About Me</span>
+
+                <p class="about-text scroll-text">
+                    My workflow bridges design and development, turning concepts into
+                    functional, responsive experiences. I focus on usability, clean
+                    layouts, and smooth interactions to create interfaces that are both
+                    visually engaging and technically sound.
+                </p>
+            </div>
+
+            <div class="about-skills">
+                <div class="skill-card">
+                    <div class="skill-icon html"></div>
+                    <div class="skill-info">
+                        <span>HTML5</span>
+                        <strong>90%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon css"></div>
+                    <div class="skill-info">
+                        <span>CSS3</span>
+                        <strong>80%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon javascript"></div>
+                    <div class="skill-info">
+                        <span>JavaScript</span>
+                        <strong>40%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon tailwind"></div>
+                    <div class="skill-info">
+                        <span>Tailwind Css</span>
+                        <strong>65%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon photoshop"></div>
+                    <div class="skill-info">
+                        <span>Adobe Photoshop</span>
+                        <strong>55%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon illustrator"></div>
+                    <div class="skill-info">
+                        <span>Adobe Illustrator</span>
+                        <strong>50%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon figma"></div>
+                    <div class="skill-info">
+                        <span>Figma</span>
+                        <strong>90%</strong>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon xd"></div>
+                    <div class="skill-info">
+                        <span>Adobe XD</span>
+                        <strong>55%</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SERVICES ========== -->
+        <section class="services" id="services">
+            <div class="services-head">
+                <h2>Services</h2>
+                <!-- FIX 2: Expanded subtext (20+ words) -->
+                <p>
+                    We transform complex digital challenges into elegant, functional
+                    solutions — combining strategic thinking, visual clarity, and
+                    human-centered design to build products that not only look
+                    exceptional but perform brilliantly across every touchpoint.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- FIX 2: svc-ring added to each card -->
+                <div class="svc-card" data-index="01">
+                    <div class="svc-card-inner">
+                        <div class="svc-ring"></div>
+                        <div class="svc-ring-2"></div>
+                        <div class="svc-front">
+                            <span class="svc-num">01</span>
+                            <div class="svc-icon-wrap"><i class="ri-palette-line"></i></div>
+                            <h3>Brand Identity<br />Design</h3>
+                            <div class="svc-line"></div>
+                            <p>Strategic branding solutions built to connect.</p>
+                        </div>
+                        <div class="svc-back">
+                            <span class="svc-num">01</span>
+                            <h3>Brand Identity Design</h3>
+                            <p>
+                                Strategic, data-driven branding solutions designed to build
+                                strong brand presence and connect with your audience.
+                            </p>
+                            <div class="svc-tags">
+                                <span>Content strategy</span>
+                                <span>Analytics</span>
+                                <span>Community</span>
+                            </div>
+                            <a href="#" class="svc-cta">Explore <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-card featured" data-index="02">
+                    <div class="svc-card-inner">
+                        <div class="svc-ring"></div>
+                        <div class="svc-ring-2"></div>
+                        <div class="svc-front">
+                            <span class="svc-num">02</span>
+                            <div class="svc-icon-wrap">
+                                <i class="ri-code-s-slash-line"></i>
+                            </div>
+                            <h3>Web Design &<br />Development</h3>
+                            <div class="svc-line"></div>
+                            <p>Modern, responsive websites for the bold.</p>
+                        </div>
+                        <div class="svc-back">
+                            <span class="svc-num">02</span>
+                            <h3>Web Design & Development</h3>
+                            <p>
+                                Modern, responsive, high-performance websites crafted for
+                                usability and scalability across all devices.
+                            </p>
+                            <div class="svc-tags">
+                                <span>HTML / CSS</span>
+                                <span>JavaScript</span>
+                                <span>Figma</span>
+                            </div>
+                            <a href="#" class="svc-cta">Explore <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-card" data-index="03">
+                    <div class="svc-card-inner">
+                        <div class="svc-ring"></div>
+                        <div class="svc-ring-2"></div>
+                        <div class="svc-front">
+                            <span class="svc-num">03</span>
+                            <div class="svc-icon-wrap">
+                                <i class="ri-layout-masonry-line"></i>
+                            </div>
+                            <h3>Graphic<br />Design</h3>
+                            <div class="svc-line"></div>
+                            <p>Visuals that speak louder than words.</p>
+                        </div>
+                        <div class="svc-back">
+                            <span class="svc-num">03</span>
+                            <h3>Graphic Design</h3>
+                            <p>
+                                From logos to marketing creatives — visually compelling
+                                designs that communicate your brand's story with clarity.
+                            </p>
+                            <div class="svc-tags">
+                                <span>Logos</span>
+                                <span>Social Media</span>
+                                <span>Print</span>
+                            </div>
+                            <a href="#" class="svc-cta">Explore <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-card svc-wide" data-index="04">
+                    <div class="svc-card-inner">
+                        <div class="svc-ring"></div>
+                        <div class="svc-ring-2"></div>
+                        <div class="svc-front svc-front-wide">
+                            <div class="svc-wide-text">
+                                <span class="svc-num">04</span>
+                                <div class="svc-icon-wrap">
+                                    <i class="ri-smartphone-line"></i>
+                                </div>
+                                <h3>UI / UX Design</h3>
+                                <p>
+                                    Intuitive flows. Delightful screens. Every pixel with
+                                    purpose.
+                                </p>
+                            </div>
+                            <div class="svc-wide-badge">
+                                <span>Available for <br />freelance work</span>
+                                <i class="ri-arrow-right-up-line"></i>
+                            </div>
+                        </div>
+                        <div class="svc-back">
+                            <span class="svc-num">04</span>
+                            <h3>UI / UX Design</h3>
+                            <p>
+                                User research, wireframing, prototyping, and final UI —
+                                end-to-end product design that converts and retains users.
+                            </p>
+                            <div class="svc-tags">
+                                <span>Wireframing</span>
+                                <span>Prototyping</span>
+                                <span>User Research</span>
+                            </div>
+                            <a href="#" class="svc-cta">Explore <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EDUCATION & EXPERIENCE ========== -->
+        <section class="timeline-section" id="education">
+            <div class="timeline-head">
+                <h2>Education & <span>Experience</span></h2>
+                <p>A journey of learning, growth, and professional evolution.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-row tl-left">
+                    <div class="tl-content">
+                        <div class="tl-badge">Education</div>
+                        <div class="tl-meta">
+                            <img src="./Assets/education/mit.png" alt="MIT" />
+                            <div>
+                                <h3>Modern Institute of Technology</h3>
+                                <span class="tl-year">2017 – 2020</span>
+                            </div>
+                        </div>
+                        <h4>B.Sc (IT) : Information Technology</h4>
+                        <p>
+                            Completed Bachelor of Science in Information Technology (B.Sc
+                            IT) from Modern Institute of Technology, Rishikesh, between 2017
+                            and 2020. The program provided a strong academic foundation in
+                            Information Technology, covering web technologies, database
+                            management, software development, computer fundamentals, and
+                            problem-solving skills, preparing me for a professional career
+                            in the IT industry.
+                        </p>
+                    </div>
+                    <div class="tl-connector"><span class="tl-dot"></span></div>
+                    <div class="tl-spacer"></div>
+                </div>
+
+                <div class="timeline-row tl-right">
+                    <div class="tl-spacer"></div>
+                    <div class="tl-connector"><span class="tl-dot"></span></div>
+                    <div class="tl-content">
+                        <div class="tl-badge">Education</div>
+                        <div class="tl-meta">
+                            <img src="./Assets/education/gehu.png" alt="GEHU" />
+                            <div>
+                                <h3>Graphic Era Hill University</h3>
+                                <span class="tl-year">2020 – 2022</span>
+                            </div>
+                        </div>
+                        <h4>MCA : Master of Computer Applications</h4>
+                        <p>
+                            Completed Master of Computer Applications (MCA) from Graphic Era
+                            Hill University, Dehradun, between 2020 and 2022. The program
+                            enhanced my understanding of advanced computer applications,
+                            software development, database management, web technologies, and
+                            system analysis. Through academic projects and practical
+                            learning, I strengthened my technical, analytical, and
+                            problem-solving skills, building a strong foundation for a
+                            career in the IT and digital technology industry.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-row tl-left">
+                    <div class="tl-content">
+                        <div class="tl-badge tl-badge-exp">Experience</div>
+                        <div class="tl-meta">
+                            <img src="./Assets/education/mahi.png" alt="Mahi Creations" />
+                            <div>
+                                <h3>Mahi Creations</h3>
+                                <span class="tl-year">2024 - 2025</span>
+                            </div>
+                        </div>
+                        <h4>Web & UI/UX Designer</h4>
+                        <p>
+                            Worked as a Web Designer & UI/UX Designer at Mahi Creations from
+                            2024 to 2025, creating responsive websites, user-friendly
+                            interfaces, and visually engaging digital experiences.
+                            Collaborated on website design, wireframing, prototyping, and
+                            user experience improvements while ensuring modern design
+                            standards, usability, and cross-device compatibility across
+                            multiple projects.
+                        </p>
+                    </div>
+                    <div class="tl-connector"><span class="tl-dot"></span></div>
+                    <div class="tl-spacer"></div>
+                </div>
+
+                <div class="timeline-row tl-right">
+                    <div class="tl-spacer"></div>
+                    <div class="tl-connector"><span class="tl-dot"></span></div>
+                    <div class="tl-content">
+                        <div class="tl-badge tl-badge-exp">Experience</div>
+                        <div class="tl-meta">
+                            <img src="./Assets/education/atech.png" alt="Aucourant" />
+                            <div>
+                                <h3>Aucourant Technologies Pvt. Ltd.</h3>
+                                <span class="tl-year">2025 – Present</span>
+                            </div>
+                        </div>
+                        <h4>UI/UX Designer & UI Developer</h4>
+                        <p>
+                            Working as a UI/UX Designer & UI Developer at Aucourant
+                            Technologies Pvt. Ltd. since 2025, creating modern, responsive,
+                            and user-centric digital experiences. Responsible for designing
+                            intuitive interfaces, developing interactive UI components,
+                            improving user journeys, and collaborating with development
+                            teams to deliver visually engaging and high-performance web
+                            applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== WORK PORTFOLIO ========== -->
+        <section class="latest-work" id="Portfolio">
+            <div class="work-container">
+                <div class="work-head">
+                    <div class="work-head-left">
+                        <span class="work-pill">Our Work</span>
+                        <h2>Our Latest Work</h2>
+                        <p>
+                            Our tailored solutions empower your online presence, ensuring
+                            growth and success in the digital landscape.
+                        </p>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="prevSlide">
+                            <i class="ri-arrow-left-line"></i>
+                        </button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                        <button class="carousel-btn" id="nextSlide">
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <div class="work-grid" id="carouselTrack">
+                        <div class="work-card">
+                            <div class="work-media">
+                                <img src="./Assets/Projects/product01.png" alt="SE-LMS" />
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-content">
+                                    <h3>SE LMS</h3>
+                                    <p>
+                                        A simple and user-friendly learning management system
+                                        designed to manage online courses and student progress.
+                                    </p>
+                                </div>
+                                <a href="https://selms.org/" class="work-arrow">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="work-card">
+                            <div class="work-media">
+                                <img src="./Assets/Projects/AI Study Assistance.png" alt="AI Study Assistance" />
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-content">
+                                    <h3>AI Study Assistance</h3>
+                                    <p>
+                                        Smart AI that helps you study better, understand faster,
+                                        and stay organized with personalized learning support.
+                                    </p>
+                                </div>
+                                <a href="https://www.figma.com/design/o5WljreJkHYsYNgVyk6OKs/" class="work-arrow">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="work-card">
+                            <div class="work-media">
+                                <img src="./Assets/Projects/product03.png" alt="cvNext AI" />
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-content">
+                                    <h3>CVNext - AI Resume Builder App</h3>
+                                    <p>
+                                        Designed an AI-powered mobile app for creating
+                                        professional, ATS-optimized resumes with modern UI/UX,
+                                        smart resume assistance, and customizable templates.
+                                    </p>
+                                </div>
+                                <a href="https://cvnext.ai/" class="work-arrow">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="work-card">
+                            <div class="work-media">
+                                <img src="./Assets/Projects/product04.jpeg" alt="NexTalk" />
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-content">
+                                    <h3>NexTalk - Chat Messenger App</h3>
+                                    <p>
+                                        NexTalk is a modern chat messenger application designed
+                                        with a clean and intuitive user interface for seamless
+                                        communication.
+                                    </p>
+                                </div>
+                                <a href="https://nextalk-dev.vercel.app/" class="work-arrow">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="work-card">
+                            <div class="work-media">
+                                <img src="./Assets/Projects/product05.jpeg" alt="BrainWave AI" />
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-content">
+                                    <h3>BrainWave AI - Intelligence Assistant</h3>
+                                    <p>
+                                        BrainWave AI is a modern AI assistant interface designed
+                                        to deliver smart conversations, quick answers, and an
+                                        engaging user experience.
+                                    </p>
+                                </div>
+                                <a href="https://aibrainwave-ten.vercel.app/" class="work-arrow">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="work-card">
+                            <div class="work-media">
+                                <img src="./Assets/Projects/Creache.png" alt="Project 6" />
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-content">
+                                    <h3>Parent Monitoring App</h3>
+                                    <p>
+                                        A modern parent monitoring app offering live classroom streaming, attendance
+                                        tracking, nutrition updates, event reminders, and child activity insights.
+                                    </p>
+                                </div>
+                                <a href="#" class="work-arrow">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA Section ========== -->
+        <section class="cta-section" id="CTA">
+            <div class="cta-bg"></div>
+            <div class="cta-particles">
+                <span class="cta-particle" style="--x: 10%; --y: 20%; --s: 0.6; --d: 0s"></span>
+                <span class="cta-particle" style="--x: 85%; --y: 15%; --s: 0.4; --d: 1.2s"></span>
+                <span class="cta-particle" style="--x: 25%; --y: 75%; --s: 0.7; --d: 0.6s"></span>
+                <span class="cta-particle" style="--x: 70%; --y: 65%; --s: 0.5; --d: 2s"></span>
+                <span class="cta-particle" style="--x: 50%; --y: 10%; --s: 0.3; --d: 1.5s"></span>
+                <span class="cta-particle" style="--x: 90%; --y: 80%; --s: 0.6; --d: 0.3s"></span>
+                <span class="cta-particle" style="--x: 5%; --y: 60%; --s: 0.4; --d: 1s"></span>
+                <span class="cta-particle" style="--x: 60%; --y: 90%; --s: 0.5; --d: 1.8s"></span>
+            </div>
+            <div class="cta-code-lines">
+                <span class="cta-code" style="--top: 8%; --left: 2%; --op: 0.07">const vision = () =>
+                    buildFuture();</span>
+                <span class="cta-code" style="--top: 18%; --left: 68%; --op: 0.06">npm install creativity</span>
+                <span class="cta-code" style="--top: 72%; --left: 3%; --op: 0.07">git commit -m "launch 🚀"</span>
+                <span class="cta-code" style="--top: 82%; --left: 60%; --op: 0.06">design.system({ scale: ∞ })</span>
+                <span class="cta-code" style="--top: 35%; --left: 75%; --op: 0.05">while(true) { innovate(); }</span>
+                <span class="cta-code" style="--top: 55%; --left: 1%; --op: 0.06">export default Excellence;</span>
+            </div>
+            <div class="cta-content">
+                <span class="cta-tag">Get's Started a Projects?</span>
+                <h2 class="cta-title">
+                    LET'S WORK<br />
+                    TOGETHER<span>.</span>
+                </h2>
+                <div class="cta-newsletter">
+                    <p class="cta-newsletter-label">
+                        Get design tips &amp; project updates in your inbox
+                    </p>
+                    <div class="cta-newsletter-form" id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address..." />
+                        <button class="cta-newsletter-submit" id="newsletterBtn" type="button"
+                            onclick="handleNewsletter()">
+                            <i class="ri-send-plane-line"></i>
+                            <span class="btn-text">SUBSCRIBE</span>
+                        </button>
+                    </div>
+                    <div class="cta-newsletter-success" id="newsletterSuccess">
+                        <i class="ri-checkbox-circle-line"></i>
+                        You're subscribed! Welcome aboard.
+                    </div>
+                    <span class="cta-newsletter-note">
+                        <i class="ri-shield-check-line"></i>
+                        No spam, ever. Unsubscribe anytime.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <span class="contact-pill">CONTACT</span>
+                    <h2 class="contact-title">Ready To <span>Collaborate</span>?</h2>
+                    <p class="contact-desc">
+                        Whether you're looking to build a product, improve user
+                        experience, or need long-term design support — feel free to reach
+                        out.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- LEFT: Info cards -->
+                    <div class="contact-left">
+                        <a href="mailto:work.manishbisht@gmail.com" class="contact-info-card">
+                            <div class="contact-icon-box">
+                                <i class="ri-mail-send-line"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">Email</span>
+                                <span class="contact-info-value">work.manishbisht@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:+919897596282" class="contact-info-card">
+                            <div class="contact-icon-box">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">Phone</span>
+                                <span class="contact-info-value">+91 9897596282</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.google.com/maps?q=Dehradun,India" target="_blank"
+                            class="contact-info-card">
+                            <div class="contact-icon-box">
+                                <i class="ri-map-pin-2-line"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">Location</span>
+                                <span class="contact-info-value">Dehradun, India</span>
+                            </div>
+                        </a>
+
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/manish-bisht-ba2618337/" target="_blank">
+                                <i class="ri-linkedin-line"></i>
+                            </a>
+                            <a href="https://github.com/workmanishbisht" target="_blank">
+                                <i class="ri-github-line"></i>
+                            </a>
+                            <a href="https://www.instagram.com/manish_bisht_official/" target="_blank">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://wa.me/919897596282" target="_blank">
+                                <i class="ri-whatsapp-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Form -->
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-title">Send a Message</div>
+                        <div class="form-subtitle">I usually respond within 24 hours.</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" name="name" placeholder="John Doe" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" name="email" placeholder="john@example.com" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="subject" placeholder="Project inquiry..." />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell me about your project..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-btn">
+                            <span>Send Message</span>
+                            <i class="ri-send-plane-line"></i>
+                        </button>
+
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIX 5b: Copyright Footer -->
+        <footer class="footer-copyright">
+            <div class="footer-left">
+                <span>©
+                    <script>document.write(new Date().getFullYear())</script>
+                </span>
                 <strong>Manish Bisht</strong>
-              </a>
+                <span>·</span>
+                <span>Made with</span>
+                <i class="ri-heart-fill footer-heart"></i>
+                <span>in Dehradun, India</span>
             </div>
-            <span class="logo-since">Since . 2026</span>
-          </div>
-
-          <div class="header-info">
-            <span class="location">
-              <i class="ri-global-line"></i>
-              Based on Dehradun, India
-            </span>
-
-            <span class="email-pill">
-              <a href="mailto:work.manishbisht@gmail.com">
-                Email: work.manishbisht@gmail.com
-              </a>
-            </span>
-          </div>
-
-          <div class="header-actions">
-            <button id="themeToggle" class="menu-btn">
-              <i class="ri-moon-line"></i>
-            </button>
-
-            <button class="menu-btn">
-              <i class="ri-menu-3-line"></i>
-            </button>
-
-            <button class="talk-btn" onclick="scrollToContact()">
-              <i class="ri-arrow-right-line"></i>
-              LET'S TALK
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <!-- ========== HERO ========== -->
-      <section class="hero" id="hero">
-        <div class="hero-left">
-          <div class="hero-tag">
-            Research, <br />
-            Wireframe, Design
-            <span class="line"></span>
-          </div>
-
-          <p class="intro">I'm Manish Bisht,</p>
-
-          <h1 class="title">
-            <span id="element">UI / UX</span> <br />
-            <span class="highlight">Developer</span>.
-          </h1>
-
-          <p class="subtitle">
-            Designing intuitive, user-centered digital experiences that blend
-            aesthetics and usability to create impactful, scalable, and
-            meaningful products for modern brands and businesses.
-          </p>
-
-          <div class="follow-wrap">
-            <span class="follow-title">Follow Me</span>
-
-            <div class="follow-actions">
-              <a href="#" class="follow-icon"
-                ><i class="ri-dribbble-line"></i
-              ></a>
-              <a href="#" class="follow-icon"
-                ><i class="ri-pinterest-line"></i
-              ></a>
-              <a
-                href="https://www.behance.net/manishbisht13"
-                class="follow-icon"
-                ><i class="ri-behance-line"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/manish-bisht-ba2618337/"
-                class="follow-icon"
-                ><i class="ri-linkedin-line"></i
-              ></a>
-              <a href="#" class="resume-outline">
-                <i class="ri-mobile-download-line"></i>
-                Download Resume
-              </a>
+            <div class="footer-right">
+                <a href="mailto:work.manishbisht@gmail.com">work.manishbisht@gmail.com</a>
+                <div class="footer-dot"></div>
+                <a href="https://www.linkedin.com/in/manish-bisht-ba2618337/" target="_blank">LinkedIn</a>
+                <div class="footer-dot"></div>
+                <a href="https://github.com/workmanishbisht" target="_blank">Github</a>
             </div>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <img src="./Assets/icons/profileIcon.png" alt="profile" />
-        </div>
-      </section>
-
-      <!-- ========== ABOUT ========== -->
-      <section class="about" id="about">
-        <div class="about-head">
-          <span class="about-pill">About Me</span>
-
-          <p class="about-text scroll-text">
-            My workflow bridges design and development, turning concepts into
-            functional, responsive experiences. I focus on usability, clean
-            layouts, and smooth interactions to create interfaces that are both
-            visually engaging and technically sound.
-          </p>
-        </div>
-
-        <div class="about-skills">
-          <div class="skill-card">
-            <div class="skill-icon html"></div>
-            <div class="skill-info">
-              <span>HTML5</span>
-              <strong>90%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon css"></div>
-            <div class="skill-info">
-              <span>CSS3</span>
-              <strong>80%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon javascript"></div>
-            <div class="skill-info">
-              <span>JavaScript</span>
-              <strong>40%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon tailwind"></div>
-            <div class="skill-info">
-              <span>Tailwind Css</span>
-              <strong>65%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon photoshop"></div>
-            <div class="skill-info">
-              <span>Adobe Photoshop</span>
-              <strong>55%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon illustrator"></div>
-            <div class="skill-info">
-              <span>Adobe Illustrator</span>
-              <strong>50%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon figma"></div>
-            <div class="skill-info">
-              <span>Figma</span>
-              <strong>90%</strong>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon xd"></div>
-            <div class="skill-info">
-              <span>Adobe XD</span>
-              <strong>55%</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== SERVICES ========== -->
-      <section class="services" id="services">
-        <div class="services-head">
-          <h2>Services</h2>
-          <!-- FIX 2: Expanded subtext (20+ words) -->
-          <p>
-            We transform complex digital challenges into elegant, functional
-            solutions — combining strategic thinking, visual clarity, and
-            human-centered design to build products that not only look
-            exceptional but perform brilliantly across every touchpoint.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <!-- FIX 2: svc-ring added to each card -->
-          <div class="svc-card" data-index="01">
-            <div class="svc-card-inner">
-              <div class="svc-ring"></div>
-              <div class="svc-ring-2"></div>
-              <div class="svc-front">
-                <span class="svc-num">01</span>
-                <div class="svc-icon-wrap"><i class="ri-palette-line"></i></div>
-                <h3>Brand Identity<br />Design</h3>
-                <div class="svc-line"></div>
-                <p>Strategic branding solutions built to connect.</p>
-              </div>
-              <div class="svc-back">
-                <span class="svc-num">01</span>
-                <h3>Brand Identity Design</h3>
-                <p>
-                  Strategic, data-driven branding solutions designed to build
-                  strong brand presence and connect with your audience.
-                </p>
-                <div class="svc-tags">
-                  <span>Content strategy</span>
-                  <span>Analytics</span>
-                  <span>Community</span>
-                </div>
-                <a href="#" class="svc-cta"
-                  >Explore <i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="svc-card featured" data-index="02">
-            <div class="svc-card-inner">
-              <div class="svc-ring"></div>
-              <div class="svc-ring-2"></div>
-              <div class="svc-front">
-                <span class="svc-num">02</span>
-                <div class="svc-icon-wrap">
-                  <i class="ri-code-s-slash-line"></i>
-                </div>
-                <h3>Web Design &<br />Development</h3>
-                <div class="svc-line"></div>
-                <p>Modern, responsive websites for the bold.</p>
-              </div>
-              <div class="svc-back">
-                <span class="svc-num">02</span>
-                <h3>Web Design & Development</h3>
-                <p>
-                  Modern, responsive, high-performance websites crafted for
-                  usability and scalability across all devices.
-                </p>
-                <div class="svc-tags">
-                  <span>HTML / CSS</span>
-                  <span>JavaScript</span>
-                  <span>Figma</span>
-                </div>
-                <a href="#" class="svc-cta"
-                  >Explore <i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="svc-card" data-index="03">
-            <div class="svc-card-inner">
-              <div class="svc-ring"></div>
-              <div class="svc-ring-2"></div>
-              <div class="svc-front">
-                <span class="svc-num">03</span>
-                <div class="svc-icon-wrap">
-                  <i class="ri-layout-masonry-line"></i>
-                </div>
-                <h3>Graphic<br />Design</h3>
-                <div class="svc-line"></div>
-                <p>Visuals that speak louder than words.</p>
-              </div>
-              <div class="svc-back">
-                <span class="svc-num">03</span>
-                <h3>Graphic Design</h3>
-                <p>
-                  From logos to marketing creatives — visually compelling
-                  designs that communicate your brand's story with clarity.
-                </p>
-                <div class="svc-tags">
-                  <span>Logos</span>
-                  <span>Social Media</span>
-                  <span>Print</span>
-                </div>
-                <a href="#" class="svc-cta"
-                  >Explore <i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="svc-card svc-wide" data-index="04">
-            <div class="svc-card-inner">
-              <div class="svc-ring"></div>
-              <div class="svc-ring-2"></div>
-              <div class="svc-front svc-front-wide">
-                <div class="svc-wide-text">
-                  <span class="svc-num">04</span>
-                  <div class="svc-icon-wrap">
-                    <i class="ri-smartphone-line"></i>
-                  </div>
-                  <h3>UI / UX Design</h3>
-                  <p>
-                    Intuitive flows. Delightful screens. Every pixel with
-                    purpose.
-                  </p>
-                </div>
-                <div class="svc-wide-badge">
-                  <span>Available for <br />freelance work</span>
-                  <i class="ri-arrow-right-up-line"></i>
-                </div>
-              </div>
-              <div class="svc-back">
-                <span class="svc-num">04</span>
-                <h3>UI / UX Design</h3>
-                <p>
-                  User research, wireframing, prototyping, and final UI —
-                  end-to-end product design that converts and retains users.
-                </p>
-                <div class="svc-tags">
-                  <span>Wireframing</span>
-                  <span>Prototyping</span>
-                  <span>User Research</span>
-                </div>
-                <a href="#" class="svc-cta"
-                  >Explore <i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== EDUCATION & EXPERIENCE ========== -->
-      <section class="timeline-section" id="education">
-        <div class="timeline-head">
-          <h2>Education & <span>Experience</span></h2>
-          <p>A journey of learning, growth, and professional evolution.</p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-row tl-left">
-            <div class="tl-content">
-              <div class="tl-badge">Education</div>
-              <div class="tl-meta">
-                <img src="./Assets/education/mit.png" alt="MIT" />
-                <div>
-                  <h3>Modern Institute of Technology</h3>
-                  <span class="tl-year">2017 – 2020</span>
-                </div>
-              </div>
-              <h4>B.Sc (IT) : Information Technology</h4>
-              <p>
-                Completed Bachelor of Science in Information Technology (B.Sc
-                IT) from Modern Institute of Technology, Rishikesh, between 2017
-                and 2020. The program provided a strong academic foundation in
-                Information Technology, covering web technologies, database
-                management, software development, computer fundamentals, and
-                problem-solving skills, preparing me for a professional career
-                in the IT industry.
-              </p>
-            </div>
-            <div class="tl-connector"><span class="tl-dot"></span></div>
-            <div class="tl-spacer"></div>
-          </div>
-
-          <div class="timeline-row tl-right">
-            <div class="tl-spacer"></div>
-            <div class="tl-connector"><span class="tl-dot"></span></div>
-            <div class="tl-content">
-              <div class="tl-badge">Education</div>
-              <div class="tl-meta">
-                <img src="./Assets/education/gehu.png" alt="GEHU" />
-                <div>
-                  <h3>Graphic Era Hill University</h3>
-                  <span class="tl-year">2020 – 2022</span>
-                </div>
-              </div>
-              <h4>MCA : Master of Computer Applications</h4>
-              <p>
-                Completed Master of Computer Applications (MCA) from Graphic Era
-                Hill University, Dehradun, between 2020 and 2022. The program
-                enhanced my understanding of advanced computer applications,
-                software development, database management, web technologies, and
-                system analysis. Through academic projects and practical
-                learning, I strengthened my technical, analytical, and
-                problem-solving skills, building a strong foundation for a
-                career in the IT and digital technology industry.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-row tl-left">
-            <div class="tl-content">
-              <div class="tl-badge tl-badge-exp">Experience</div>
-              <div class="tl-meta">
-                <img src="./Assets/education/mahi.png" alt="Mahi Creations" />
-                <div>
-                  <h3>Mahi Creations</h3>
-                  <span class="tl-year">2024 - 2025</span>
-                </div>
-              </div>
-              <h4>Web & UI/UX Designer</h4>
-              <p>
-                Worked as a Web Designer & UI/UX Designer at Mahi Creations from
-                2024 to 2025, creating responsive websites, user-friendly
-                interfaces, and visually engaging digital experiences.
-                Collaborated on website design, wireframing, prototyping, and
-                user experience improvements while ensuring modern design
-                standards, usability, and cross-device compatibility across
-                multiple projects.
-              </p>
-            </div>
-            <div class="tl-connector"><span class="tl-dot"></span></div>
-            <div class="tl-spacer"></div>
-          </div>
-
-          <div class="timeline-row tl-right">
-            <div class="tl-spacer"></div>
-            <div class="tl-connector"><span class="tl-dot"></span></div>
-            <div class="tl-content">
-              <div class="tl-badge tl-badge-exp">Experience</div>
-              <div class="tl-meta">
-                <img src="./Assets/education/atech.png" alt="Aucourant" />
-                <div>
-                  <h3>Aucourant Technologies Pvt. Ltd.</h3>
-                  <span class="tl-year">2025 – Present</span>
-                </div>
-              </div>
-              <h4>UI/UX Designer & UI Developer</h4>
-              <p>
-                Working as a UI/UX Designer & UI Developer at Aucourant
-                Technologies Pvt. Ltd. since 2025, creating modern, responsive,
-                and user-centric digital experiences. Responsible for designing
-                intuitive interfaces, developing interactive UI components,
-                improving user journeys, and collaborating with development
-                teams to deliver visually engaging and high-performance web
-                applications.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== WORK PORTFOLIO ========== -->
-      <section class="latest-work" id="Portfolio">
-        <div class="work-container">
-          <div class="work-head">
-            <div class="work-head-left">
-              <span class="work-pill">Our Work</span>
-              <h2>Our Latest Work</h2>
-              <p>
-                Our tailored solutions empower your online presence, ensuring
-                growth and success in the digital landscape.
-              </p>
-            </div>
-
-            <div class="carousel-controls">
-              <button class="carousel-btn" id="prevSlide">
-                <i class="ri-arrow-left-line"></i>
-              </button>
-              <div class="carousel-dots" id="carouselDots"></div>
-              <button class="carousel-btn" id="nextSlide">
-                <i class="ri-arrow-right-line"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="carousel-wrapper">
-            <div class="work-grid" id="carouselTrack">
-              <div class="work-card">
-                <div class="work-media">
-                  <img src="./Assets/Projects/product01.png" alt="SE-LMS" />
-                </div>
-                <div class="work-overlay">
-                  <div class="work-content">
-                    <h3>SE LMS</h3>
-                    <p>
-                      A simple and user-friendly learning management system
-                      designed to manage online courses and student progress.
-                    </p>
-                  </div>
-                  <a href="https://selms.org/" class="work-arrow">
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="work-card">
-                <div class="work-media">
-                  <img
-                    src="./Assets/Projects/AI Study Assistance.png"
-                    alt="AI Study Assistance"
-                  />
-                </div>
-                <div class="work-overlay">
-                  <div class="work-content">
-                    <h3>AI Study Assistance</h3>
-                    <p>
-                      Smart AI that helps you study better, understand faster,
-                      and stay organized with personalized learning support.
-                    </p>
-                  </div>
-                  <a
-                    href="https://www.figma.com/design/o5WljreJkHYsYNgVyk6OKs/"
-                    class="work-arrow"
-                  >
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="work-card">
-                <div class="work-media">
-                  <img src="./Assets/Projects/product03.png" alt="cvNext AI" />
-                </div>
-                <div class="work-overlay">
-                  <div class="work-content">
-                    <h3>CVNext - AI Resume Builder App</h3>
-                    <p>
-                      Designed an AI-powered mobile app for creating
-                      professional, ATS-optimized resumes with modern UI/UX,
-                      smart resume assistance, and customizable templates.
-                    </p>
-                  </div>
-                  <a href="https://cvnext.ai/" class="work-arrow">
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="work-card">
-                <div class="work-media">
-                  <img src="./Assets/Projects/product04.jpeg" alt="NexTalk" />
-                </div>
-                <div class="work-overlay">
-                  <div class="work-content">
-                    <h3>NexTalk - Chat Messenger App</h3>
-                    <p>
-                      NexTalk is a modern chat messenger application designed
-                      with a clean and intuitive user interface for seamless
-                      communication.
-                    </p>
-                  </div>
-                  <a href="https://nextalk-dev.vercel.app/" class="work-arrow">
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="work-card">
-                <div class="work-media">
-                  <img
-                    src="./Assets/Projects/product05.jpeg"
-                    alt="BrainWave AI"
-                  />
-                </div>
-                <div class="work-overlay">
-                  <div class="work-content">
-                    <h3>BrainWave AI - Intelligence Assistant</h3>
-                    <p>
-                      BrainWave AI is a modern AI assistant interface designed
-                      to deliver smart conversations, quick answers, and an
-                      engaging user experience.
-                    </p>
-                  </div>
-                  <a
-                    href="https://aibrainwave-ten.vercel.app/"
-                    class="work-arrow"
-                  >
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="work-card">
-                <div class="work-media">
-                  <img src="./Assets/Projects/product06.png" alt="Project 6" />
-                </div>
-                <div class="work-overlay">
-                  <div class="work-content">
-                    <h3>Project Six</h3>
-                    <p>
-                      Brand system and UI kit built to scale across multiple
-                      touchpoints with consistent visual language.
-                    </p>
-                  </div>
-                  <a href="#" class="work-arrow">
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== CTA Section ========== -->
-      <section class="cta-section" id="CTA">
-        <div class="cta-bg"></div>
-        <div class="cta-particles">
-          <span
-            class="cta-particle"
-            style="--x: 10%; --y: 20%; --s: 0.6; --d: 0s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 85%; --y: 15%; --s: 0.4; --d: 1.2s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 25%; --y: 75%; --s: 0.7; --d: 0.6s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 70%; --y: 65%; --s: 0.5; --d: 2s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 50%; --y: 10%; --s: 0.3; --d: 1.5s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 90%; --y: 80%; --s: 0.6; --d: 0.3s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 5%; --y: 60%; --s: 0.4; --d: 1s"
-          ></span>
-          <span
-            class="cta-particle"
-            style="--x: 60%; --y: 90%; --s: 0.5; --d: 1.8s"
-          ></span>
-        </div>
-        <div class="cta-code-lines">
-          <span class="cta-code" style="--top: 8%; --left: 2%; --op: 0.07"
-            >const vision = () => buildFuture();</span
-          >
-          <span class="cta-code" style="--top: 18%; --left: 68%; --op: 0.06"
-            >npm install creativity</span
-          >
-          <span class="cta-code" style="--top: 72%; --left: 3%; --op: 0.07"
-            >git commit -m "launch 🚀"</span
-          >
-          <span class="cta-code" style="--top: 82%; --left: 60%; --op: 0.06"
-            >design.system({ scale: ∞ })</span
-          >
-          <span class="cta-code" style="--top: 35%; --left: 75%; --op: 0.05"
-            >while(true) { innovate(); }</span
-          >
-          <span class="cta-code" style="--top: 55%; --left: 1%; --op: 0.06"
-            >export default Excellence;</span
-          >
-        </div>
-        <div class="cta-content">
-          <span class="cta-tag">Get's Started a Projects?</span>
-          <h2 class="cta-title">
-            LET'S WORK<br />
-            TOGETHER<span>.</span>
-          </h2>
-          <div class="cta-newsletter">
-            <p class="cta-newsletter-label">
-              Get design tips &amp; project updates in your inbox
-            </p>
-            <div class="cta-newsletter-form" id="newsletterForm">
-              <input
-                type="email"
-                id="newsletterEmail"
-                placeholder="Enter your email address..."
-              />
-              <button
-                class="cta-newsletter-submit"
-                id="newsletterBtn"
-                type="button"
-                onclick="handleNewsletter()"
-              >
-                <i class="ri-send-plane-line"></i>
-                <span class="btn-text">SUBSCRIBE</span>
-              </button>
-            </div>
-            <div class="cta-newsletter-success" id="newsletterSuccess">
-              <i class="ri-checkbox-circle-line"></i>
-              You're subscribed! Welcome aboard.
-            </div>
-            <span class="cta-newsletter-note">
-              <i class="ri-shield-check-line"></i>
-              No spam, ever. Unsubscribe anytime.
-            </span>
-          </div>
-        </div>
-      </section>
-
-<!-- ========== CONTACT ========== -->
-<section class="contact-section" id="contact">
-  <div class="contact-container">
-    <div class="contact-header">
-      <span class="contact-pill">CONTACT</span>
-      <h2 class="contact-title">Ready To <span>Collaborate</span>?</h2>
-      <p class="contact-desc">
-        Whether you're looking to build a product, improve user
-        experience, or need long-term design support — feel free to reach
-        out.
-      </p>
-    </div>
-
-    <div class="contact-grid">
-      <!-- LEFT: Info cards -->
-      <div class="contact-left">
-        <a href="mailto:work.manishbisht@gmail.com" class="contact-info-card">
-          <div class="contact-icon-box">
-            <i class="ri-mail-send-line"></i>
-          </div>
-          <div class="contact-info-text">
-            <span class="contact-info-label">Email</span>
-            <span class="contact-info-value">work.manishbisht@gmail.com</span>
-          </div>
-        </a>
-
-        <a href="tel:+919897596282" class="contact-info-card">
-          <div class="contact-icon-box">
-            <i class="ri-phone-line"></i>
-          </div>
-          <div class="contact-info-text">
-            <span class="contact-info-label">Phone</span>
-            <span class="contact-info-value">+91 9897596282</span>
-          </div>
-        </a>
-
-        <a href="https://www.google.com/maps?q=Dehradun,India" target="_blank" class="contact-info-card">
-          <div class="contact-icon-box">
-            <i class="ri-map-pin-2-line"></i>
-          </div>
-          <div class="contact-info-text">
-            <span class="contact-info-label">Location</span>
-            <span class="contact-info-value">Dehradun, India</span>
-          </div>
-        </a>
-
-        <div class="contact-socials">
-          <a href="https://www.linkedin.com/in/manish-bisht-ba2618337/" target="_blank">
-            <i class="ri-linkedin-line"></i>
-          </a>
-          <a href="https://github.com/workmanishbisht" target="_blank">
-            <i class="ri-github-line"></i>
-          </a>
-          <a href="https://www.instagram.com/manish_bisht_official/" target="_blank">
-            <i class="ri-instagram-line"></i>
-          </a>
-          <a href="https://wa.me/919897596282" target="_blank">
-            <i class="ri-whatsapp-line"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- RIGHT: Form -->
-      <form class="contact-form" id="contactForm">
-        <div class="form-title">Send a Message</div>
-        <div class="form-subtitle">I usually respond within 24 hours.</div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="John Doe" required />
-          </div>
-          <div class="form-group">
-            <label>Your Email</label>
-            <input type="email" name="email" placeholder="john@example.com" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" name="subject" placeholder="Project inquiry..." />
-        </div>
-
-        <div class="form-group">
-          <label>Your Message</label>
-          <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-        </div>
-
-        <button type="submit" class="contact-btn">
-          <span>Send Message</span>
-          <i class="ri-send-plane-line"></i>
-        </button>
-
-        <div id="formStatus" class="form-status"></div>
-      </form>
-    </div>
-  </div>
-</section>
-
-      <!-- FIX 5b: Copyright Footer -->
-      <footer class="footer-copyright">
-        <div class="footer-left">
-        <span>© <script>document.write(new Date().getFullYear())</script></span>
-          <strong>Manish Bisht</strong>
-          <span>·</span>
-          <span>Made with</span>
-          <i class="ri-heart-fill footer-heart"></i>
-          <span>in Dehradun, India</span>
-        </div>
-        <div class="footer-right">
-          <a href="mailto:work.manishbisht@gmail.com"
-            >work.manishbisht@gmail.com</a
-          >
-          <div class="footer-dot"></div>
-          <a
-            href="https://www.linkedin.com/in/manish-bisht-ba2618337/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <div class="footer-dot"></div>
-          <a href="https://github.com/workmanishbisht" target="_blank"
-            >Github</a
-          >
-        </div>
-      </footer>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="./js/script.js"></script>
-  </body>
+</body>
+
 </html>

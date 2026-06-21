@@ -369,13 +369,13 @@ document.querySelectorAll(".follow-icon i").forEach((icon) => {
   );
 });
 
+// Theme: always open with dark theme by default on every page load
 const themeToggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("theme");
 
-if (savedTheme && themeToggle) {
-  document.body.dataset.theme = savedTheme;
-  themeToggle.querySelector("i").className =
-    savedTheme === "dark" ? "ri-sun-line" : "ri-moon-line";
+document.body.dataset.theme = "dark";
+localStorage.setItem("theme", "dark");
+if (themeToggle) {
+  themeToggle.querySelector("i").className = "ri-sun-line";
 }
 
 themeToggle?.addEventListener("click", () => {

@@ -514,3 +514,125 @@ document.addEventListener("DOMContentLoaded", () => {
 function scrollToContact() {
   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 }
+
+/* ===========================
+   WORK PORTFOLIO — LIGHTBOX
+   =========================== */
+
+const lightboxOverlay = document.createElement("div");
+lightboxOverlay.className = "lightbox-overlay";
+lightboxOverlay.innerHTML = `
+  <div class="lightbox-inner">
+    <div class="lightbox-media">
+      <button class="lightbox-close" aria-label="Close preview">
+        <i class="ri-close-line"></i>
+      </button>
+      <img src="" alt="" />
+    </div>
+    <div class="lightbox-caption">
+      <span class="lightbox-tag">
+        <i class="ri-shapes-line"></i>
+        <span class="lightbox-tag-text"></span>
+      </span>
+      <h3></h3>
+      <p></p>
+      <div class="lightbox-divider"></div>
+      <div class="lightbox-meta">
+        <div class="lightbox-meta-item">
+          <div class="lightbox-meta-icon"><i class="ri-calendar-line"></i></div>
+          <div class="lightbox-meta-text">
+            <span class="lightbox-meta-label">Duration</span>
+            <span class="lightbox-meta-value lightbox-duration"></span>
+          </div>
+        </div>
+        <div class="lightbox-meta-item">
+          <div class="lightbox-meta-icon"><i class="ri-apps-2-line"></i></div>
+          <div class="lightbox-meta-text">
+            <span class="lightbox-meta-label">Role</span>
+            <span class="lightbox-meta-value lightbox-role"></span>
+          </div>
+        </div>
+      </div>
+      <a class="lightbox-preview-btn" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="ri-external-link-line"></i>
+        <span>Live Preview</span>
+      </a>
+    </div>
+  </div>
+`;
+document.body.appendChild(lightboxOverlay);
+
+const lbInner = lightboxOverlay.querySelector(".lightbox-inner");
+const lbImg = lightboxOverlay.querySelector("img");
+const lbTag = lightboxOverlay.querySelector(".lightbox-tag-text");
+const lbTitle = lightboxOverlay.querySelector(".lightbox-caption h3");
+const lbDesc = lightboxOverlay.querySelector(".lightbox-caption p");
+const lbDuration = lightboxOverlay.querySelector(".lightbox-duration");
+const lbRole = lightboxOverlay.querySelector(".lightbox-role");
+const lbPreviewBtn = lightboxOverlay.querySelector(".lightbox-preview-btn");
+const lbClose = lightboxOverlay.querySelector(".lightbox-close");
+
+let lastFocusedEl = null;
+
+function openLightbox(card) {
+  if (!card) return;
+
+  const imgEl = card.querySelector(".work-media img");
+  const titleEl = card.querySelector(".work-content h3");
+  const descEl = card.querySelector(".work-content p");
+  const linkEl = card.querySelector(".work-arrow");
+
+  lbImg.src = imgEl?.src || "";
+  lbImg.alt = titleEl?.textContent || "";
+  lbTag.textContent = card.dataset.category || "UI / UX Design";
+  lbTitle.textContent = titleEl?.textContent || "";
+  lbDesc.textContent = descEl?.textContent || "";
+  lbDuration.textContent = card.dataset.duration || "—";
+  lbRole.textContent = card.dataset.role || "—";
+  lbPreviewBtn.href = linkEl?.href || "#";
+
+  lastFocusedEl = document.activeElement;
+
+  lightboxOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+
+  requestAnimationFrame(() => lbClose.focus());
+}
+
+function closeLightbox() {
+  lightboxOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+  lastFocusedEl?.focus();
+}
+
+// Open on card click (image body) — ignore the arrow link so it can be handled separately
+document.addEventListener("click", (e) => {
+  const arrow = e.target.closest(".work-card .work-arrow");
+  if (arrow) return;
+
+  const card = e.target.closest(".work-card");
+  if (card) openLightbox(card);
+});
+
+// Arrow click also opens the same lightbox instead of navigating away
+document.addEventListener("click", (e) => {
+  const arrow = e.target.closest(".work-card .work-arrow");
+  if (!arrow) return;
+
+  e.preventDefault();
+  openLightbox(arrow.closest(".work-card"));
+});
+
+lbClose.addEventListener("click", closeLightbox);
+
+lightboxOverlay.addEventListener("click", (e) => {
+  if (e.target === lightboxOverlay) closeLightbox();
+});
+
+lbInner.addEventListener("click", (e) => e.stopPropagation());
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && lightboxOverlay.classList.contains("active")) {
+    closeLightbox();
+  }
+});
